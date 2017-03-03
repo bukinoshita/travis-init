@@ -1,0 +1,24 @@
+{
+  "name": "travis-init",
+  "version": "0.0.0",
+  "description": "Add TravisCI to your project",
+  "main": "index.js",
+  "repository": {
+    "url": "git@github.com:bukinoshita/travis-init.git",
+    "type": "git"
+  },
+  "author": "Bu Kinoshita <bukinoshita@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "xo && ava"
+  },
+  "devDependencies": {
+    "ava": "^0.18.2",
+    "xo": "^0.17.1"
+  },
+  "xo": {
+    "space": true,
+    "semicolon": false,
+    "esnext": true
+  }
+}
