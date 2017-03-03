@@ -42,4 +42,7 @@ Optional
 
 ## Why
 
-I used to use Codeship as Continuos Integration in all my projects. I worked well for me but then I started to focus a lot on Open Source by creating node libraries. Some awesome people started contributing and helping my libraries and then I learned that [Codeship doesn't run pull requests](https://twitter.com/BuKinoshita/status/837529887141318656) from other person that isn't on the project. [I had to add TravisCI to all my Open Source projects](https://github.com/bukinoshita?tab=overview&from=2017-03-03) in case I receive a new pull request, I want to make sure the all tests are running. It was a pain, so I decide to create trvs-init. Happy Ending :heart: :tada:
+I used to use Codeship as Continuos Integration in all my projects. It worked well for me but then I started to focus a lot in Open Source by creating node libraries. Some awesome people started contributing and helping my libraries and then I learned that [Codeship doesn't run pull requests](https://twitter.com/BuKinoshita/status/837529887141318656) from other person that isn't on the project. [I had to add TravisCI to all my Open Source projects](https://github.com/bukinoshita?tab=overview&from=2017-03-03) in case I receive a new pull request, I want to make sure that all tests are running. It was a pain, so I decide to create travis-init. Happy Ending :heart: :tada:
+
+## License
+[MIT](https://github.com/bukinoshita/travis-init/blob/master/LICENSE) &copy; Bu Kinoshita
