@@ -10,7 +10,7 @@
   "author": "Bu Kinoshita <bukinoshita@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "test": "xo && ava"
+    "test": "xo"
   },
   "devDependencies": {
     "ava": "^0.18.2",
