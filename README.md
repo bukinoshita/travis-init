@@ -2,6 +2,8 @@
 
 > Add TravisCI to your project
 
+[![Build Status](https://travis-ci.org/bukinoshita/travis-init.svg?branch=master)](https://travis-ci.org/bukinoshita/travis-init)
+
 ## Install
 
 ```bash
