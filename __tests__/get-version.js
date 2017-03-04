@@ -4,7 +4,7 @@ import test from 'ava'
 import getVersion from './../lib/get-version'
 
 test('should return the version passed', t => {
-  const res = getVersion('4')
+  const res = getVersion(undefined, '4')
   t.is(res, '4')
 })
 

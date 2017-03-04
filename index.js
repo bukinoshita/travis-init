@@ -8,7 +8,18 @@ const fileTemplate = require('./lib/file-template')
 const travisInit = (language = undefined, version = undefined) => {
   return new Promise((resolve, reject) => {
     const selectedLanguage = getLanguage(language)
-    const selectedVersion = getVersion(version)
+    const selectedVersion = getVersion(language, version)
+
+    if (!selectedLanguage) {
+      reject(`${language} not supported`)
+
+      return
+    } else if (!selectedVersion) {
+      reject(`${version} not supported`)
+
+      return
+    }
+
     const travis = fileTemplate(selectedLanguage, selectedVersion)
 
     try {
@@ -19,5 +30,9 @@ const travisInit = (language = undefined, version = undefined) => {
     }
   })
 }
+
+travisInit('node_js')
+  .then(res => console.log(res))
+  .catch(err => console.log(err))
 
 module.exports = travisInit
