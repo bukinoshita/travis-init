@@ -11,15 +11,12 @@ const travisInit = (language = undefined, version = undefined) => {
     const selectedVersion = getVersion(version)
     const travis = fileTemplate(selectedLanguage, selectedVersion)
 
-    fs.writeFileSync('.travis.yml', travis, err => {
-      if (err) {
-        reject(err)
-      }
-
-      return true
-    })
-
-    resolve('.travis.yml created')
+    try {
+      fs.writeFileSync('.travis.yml', travis)
+      resolve('.travis.yml created')
+    } catch (err) {
+      reject(err)
+    }
   })
 }
 
