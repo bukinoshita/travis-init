@@ -20,7 +20,7 @@ const travisInit = (language = undefined, version = undefined) => {
       return
     }
 
-    const travis = fileTemplate(selectedLanguage, selectedVersion)
+    const travis = fileTemplate(selectedLanguage, [selectedVersion])
 
     try {
       fs.writeFileSync('.travis.yml', travis)
