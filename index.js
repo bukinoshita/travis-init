@@ -5,22 +5,34 @@ const getLanguage = require('./lib/get-language')
 const getVersion = require('./lib/get-version')
 const fileTemplate = require('./lib/file-template')
 
-const travisInit = (language = undefined, version = undefined) => {
+const travisInit = opts => {
   return new Promise((resolve, reject) => {
-    const selectedLanguage = getLanguage(language)
-    const selectedVersion = getVersion(language, version)
-
-    if (!selectedLanguage) {
-      reject(`${language} not supported`)
-
-      return
-    } else if (!selectedVersion) {
-      reject(`${version} not supported`)
-
+    if (!opts) {
+      reject('Options should contain language and versions')
       return
     }
 
-    const travis = fileTemplate(selectedLanguage, [selectedVersion])
+    const {language, versions} = opts
+
+    if (typeof versions !== 'object') {
+      reject('Versions should be an array containing the versions needed')
+      return
+    }
+
+    const selectedLanguage = getLanguage(language)
+    const selectedVersion = getVersion(language, versions)
+
+    if (!selectedLanguage) {
+      reject(`${language} not supported`)
+      return
+    }
+
+    if (selectedVersion.length > 0) {
+      reject(`Version ${selectedVersion[0]} is not supported`)
+      return
+    }
+
+    const travis = fileTemplate(selectedLanguage, versions)
 
     try {
       fs.writeFileSync('.travis.yml', travis)
@@ -30,9 +42,5 @@ const travisInit = (language = undefined, version = undefined) => {
     }
   })
 }
-
-travisInit('node_js')
-  .then(res => console.log(res))
-  .catch(err => console.log(err))
 
 module.exports = travisInit

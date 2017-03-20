@@ -19,6 +19,9 @@
   "xo": {
     "space": true,
     "semicolon": false,
-    "esnext": true
+    "esnext": true,
+    "rules": {
+      "array-callback-return": 0
+    }
   }
 }
