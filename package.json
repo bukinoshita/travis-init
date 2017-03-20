@@ -1,6 +1,6 @@
 {
   "name": "travis-init",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Add TravisCI to your project",
   "main": "index.js",
   "repository": {
