@@ -33,7 +33,7 @@ Should contain `language` and `versions`
 #### language
 Type: `string`<br/>
 Options: for now we only support `node_js`<br/>
-Optional
+Required
 
 #### versions
 Type: `array`<br/>
@@ -45,7 +45,7 @@ Options:<br/>
 - `5` - latest 5.x release<br/>
 - `4` - latest 4.x release<br/>
 
-Optional
+Required
 
 ## License
 [MIT](https://github.com/bukinoshita/travis-init/blob/master/LICENSE) &copy; Bu Kinoshita
