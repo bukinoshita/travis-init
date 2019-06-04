@@ -13,8 +13,8 @@
     "test": "xo && ava -v"
   },
   "devDependencies": {
-    "ava": "^0.18.2",
-    "xo": "^0.17.1"
+    "ava": "0.18.2",
+    "xo": "0.17.1"
   },
   "xo": {
     "space": true,
